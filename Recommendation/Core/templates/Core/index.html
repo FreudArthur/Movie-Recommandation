@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Core/css/style.css' %}">
+    <title>Recherche</title>
+</head>
+<body>
+    <h1>Bonjour les gars
+    </h1>
+   <p> Vous voici ici dans un systeme de recommendation de film <br> </p>
+
+    <p>Je suis <big>{{Auteur}} </big>  </p>
+
+    <p>Selon un systeme de compatibilité on evaluera le titre que vous entrerez et on ressortira les films les plus compatibles avec votre demande</p>
+
+    <input type="text" id="film" placeholder="Entrez le film en question">
+    <input type="button" id="post_button" data_url= "{% url 'research' %}"  value="Suggerer">
+
+    <div id ='resultat'></div>
+    
+</body>
+<script src="{% static 'Core/js/script.js' %}">
+</script>
+</html>
