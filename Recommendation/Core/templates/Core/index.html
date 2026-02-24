@@ -1,28 +1,47 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{% static 'Core/css/style.css' %}">
-    <title>Recherche</title>
+    <title>Système de Recommandation de Films</title>
 </head>
 <body>
-    <h1>Bonjour les gars
-    </h1>
-   <p> Vous voici ici dans un systeme de recommendation de film <br> </p>
+    <div class="container">
+        <header class="header">
+            <h1 class="title"><i class="fas fa-film"></i> CineMatch</h1>
+            <p class="subtitle">Découvrez vos prochains films préférés</p>
+        </header>
 
-    <p>Je suis <big>{{Auteur}} </big>  </p>
+        <div class="card">
+            <h2>Bienvenue amateur de film</h2>
+            <p class="description">
+                Bienvenue dans notre système intelligent de recommandation de films. 
+                Entrez le titre d'un film et nous vous suggèrerons des films similaires 
+                basés sur un système de compatibilité avancé.
+            </p>
 
-    <p>Selon un systeme de compatibilité on evaluera le titre que vous entrerez et on ressortira les films les plus compatibles avec votre demande</p>
+            <div class="search-section">
+                <div class="search-container">
+                    <input type="text" id="film" placeholder="🔍 Entrez le titre d'un film...(Ex : Iron Ma)" class="search-input">
+                    <button id="post_button" data_url="{% url 'research' %}" class="btn btn-primary">Découvrir</button>
+                </div>
+                <div class="loading" id="loading"></div>
+            </div>
+        </div>
 
-    <input type="text" id="film" placeholder="Entrez le film en question">
-    <input type="button" id="post_button" data_url= "{% url 'research' %}"  value="Suggerer">
+        <div class="results-section">
+            <div id="resultat" class="results-container"></div>
+        </div>
 
-    <div id ='resultat'></div>
+        <footer class="footer">
+            <p>Made by <strong>Freud BOKOSSA</strong></p>
+        </footer>
+    </div>
     
+    <script src="{% static 'Core/js/script.js' %}"></script>
 </body>
-<script src="{% static 'Core/js/script.js' %}">
-</script>
 </html>

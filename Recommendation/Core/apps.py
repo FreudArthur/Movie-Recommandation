@@ -6,7 +6,7 @@ class CoreConfig(AppConfig):
     name = 'Core'
 
 
-    """ def ready(self):
+    def ready(self):
         # Charger le dataset dès le démarrage du serveur
         
-        SuggestionLoader.get_dataframe()"""
+        SuggestionLoader.get_dataframe()
